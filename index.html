@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        * {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            
+            background-colo;
+            background-image: url("download-6.png");
+        }
+
+        .div-1{
+            background-color: grey;
+            border: 5px double black;
+            width:500px;
+            height: 400px;
+            margin-left: 500px;
+            margin-top: 150px;
+
+        }
+        h1{
+            margin-top: 30px;
+            color: white;
+
+        }
+        button{
+            padding: 10px;
+            width:200px;
+            background-color:black;
+            color:white;
+
+        }
+        button:hover{
+            background-color: orangered;
+            color: yellow;
+        }
+        input{
+            padding:10px;
+            background-color: white;
+            width: 150px;
+        }
+        p{
+            font-size: 25;
+            color:white
+        }
+    </style>
+</head>
+<body>
+    <div class="div-1">
+        <h1>Temperature Converter</h1>
+        <br>
+    
+        <br>
+        <input type="number" id="inputs" placeholder="Enter Fahrenheit ">
+        <button onclick="convert()">Convert to Celsius</button>
+        <br><br>
+        <input type="number" id="valueinputs" placeholder="Enter Celsius">
+        <button onclick="convertto()">Convert to Fahrenheit</button>
+        <p >Result :</p>
+    
+
+        <p id="result"></p>
+
+    </div>
+    <script>
+        
+        function convert(){
+            var fahrenheit = parseFloat(document.getElementById("inputs").value);
+            var celsius = (fahrenheit -32) * 5/9;
+            document.getElementById("result").innerHTML = fahrenheit + " °F = " + celsius.toFixed(2) +"°C"
+        }
+
+        function convertto(){
+            var celsius = parseFloat(document.getElementById("valueinputs").value);
+            var fahrenheit = (celsius * 9 / 5) + 32;
+            document.getElementById("result").innerHTML = celsius + " °C = " + fahrenheit.toFixed(2) +"°F"
+        }
+
+    </script>
+    
+</body>
+</html>
